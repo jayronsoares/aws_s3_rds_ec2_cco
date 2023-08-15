@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cloud Metrics Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #666;
+            margin-top: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cloud Metrics Dashboard</h1>
+
+    <h2>Amazon S3 Metrics</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Metric Name</th>
+                <th>Values</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for metric_name, values in df_s3.items() %}
+                <tr>
+                    <td>{{ metric_name }}</td>
+                    <td>{{ values }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Amazon RDS Metrics</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Metric Name</th>
+                <th>Values</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for metric_name, values in df_rds.items() %}
+                <tr>
+                    <td>{{ metric_name }}</td>
+                    <td>{{ values }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Amazon EC2 Metrics</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Metric Name</th>
+                <th>Values</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for metric_name, values in df_ec2.items() %}
+                <tr>
+                    <td>{{ metric_name }}</td>
+                    <td>{{ values }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
