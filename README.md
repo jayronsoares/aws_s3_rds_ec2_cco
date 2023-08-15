@@ -1,7 +1,5 @@
 ## Cloud Metrics Dashboard
 
-## Introduction
-
 The Cloud Metrics Dashboard is a Flask web application that allows users to monitor and visualize metrics from Amazon Web Services (AWS) resources. It fetches data from AWS CloudWatch for Amazon S3, Amazon RDS, and Amazon EC2 services, and displays the metrics in a tabular format.
 
 ## Features
